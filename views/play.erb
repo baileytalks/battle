@@ -1,3 +1,6 @@
-<p>Player 1 is <%= @player1 %> </p></br>
-<p>Player 2 is <%= @player2 %> </p></br>
+<p>Player 1 is <%= @player1 %>, who has <%= @hp_player1 %> HP </p>
+<p>Player 2 is <%= @player2 %>, who has <%= @hp_player2 %> HP </p>
 <p>Let the battle commence! </p>
+<form action='/fight' method='get'>
+  <input type='submit' value='Fight!'>
+</form>
