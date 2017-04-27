@@ -1,8 +1,8 @@
 class Player
   attr_accessor :name, :hp
-  
-  def initialize(name)
+
+  def initialize(name, hp = rand(6)+15)
     @name = name
-    @hp   = rand(6)+15
+    @hp   = hp
   end
 end

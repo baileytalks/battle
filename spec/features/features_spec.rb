@@ -26,4 +26,11 @@ feature do
     fight
     expect(page).to have_text('Gordon has attacked Foo!')
   end
+
+  ## This is flawed! STOP IT AND STUB THE RANDOMNESS!!!!
+  scenario 'attack player 2 and reduce their HP by 10' do
+    sign_up_and_play
+    fight
+    expect(page).to have_content "Foo"
+  end
 end
