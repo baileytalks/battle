@@ -1,34 +1,30 @@
 require 'sinatra/base'
+require './lib/player.rb'
 
 class Battle < Sinatra::Base
-  set :session_secret, 'This should keep Shotgun working OK!'
-  enable :sessions
-
   get '/' do
     erb(:index)
   end
 
   post '/names' do
-    session[:player1] = params[:player1]
-    session[:player2] = params[:player2]
-    session[:hp_player1] = rand(6)+15
-    session[:hp_player2] = rand(6)+15
+    $player_1 = Player.new(params[:player1])
+    $player_2 = Player.new(params[:player2])
     redirect to('/play')
     end
 
   get '/play' do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
-    @hp_player1 = session[:hp_player1]
-    @hp_player2 = session[:hp_player2]
+    @player1 = $player_1.name
+    @player2 = $player_2.name
+    @hp_player1 = $player_1.hp
+    @hp_player2 = $player_2.hp
     erb(:play)
   end
 
   get '/fight' do
-    @player1 = session[:player1]
-    @player2 = session[:player2]
-    @hp_player1 = session[:hp_player1]
-    @hp_player2 = session[:hp_player2]
+    @player1 = $player_1.name
+    @player2 = $player_2.name
+    @hp_player1 = $player_1.hp
+    @hp_player2 = $player_2.hp
     erb(:fight)
   end
 
