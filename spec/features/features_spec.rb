@@ -33,4 +33,12 @@ feature do
     fight
     expect(page).to have_content "Foo"
   end
+
+  ## This is flawed! STOP IT AND STUB THE RANDOMNESS!!!!
+  scenario 'attack player 1 and reduce hp' do
+    sign_up_and_play
+    fight
+    fight_back
+    expect(page).to have_content "Gordon"
+  end
 end

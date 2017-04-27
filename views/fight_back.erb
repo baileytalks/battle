@@ -1,5 +1,5 @@
 <div align='center'>
-  <h2><%= @player1.name %> has attacked <%= @player2.name %>!</h2>
+  <h2><%= @player2.name %> has attacked <%= @player1.name %>!</h2>
 </div>
 
 <div align='left'>
@@ -20,7 +20,7 @@
 </div>
 
 <div align='center'>
-  <form action='/fight-back' method='get'>
-    <input type='submit' value='Fight back!'>
+  <form action='/fight' method='get'>
+    <input type='submit' value='Fight!'>
   </form>
 </div>

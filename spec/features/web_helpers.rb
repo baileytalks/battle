@@ -8,3 +8,7 @@ end
 def fight
   click_button 'Fight!'
 end
+
+def fight_back
+  click_button 'Fight back!'
+end
