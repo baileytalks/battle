@@ -24,14 +24,14 @@ feature do
   scenario 'when I click on the fight button, I want a confirmation' do
     sign_up_and_play
     fight
-    expect(page).to have_text('Gordon has attacked Foo!')
+    expect(page).to have_text('Gordon has attacked Life!')
   end
 
   ## This is flawed! STOP IT AND STUB THE RANDOMNESS!!!!
   scenario 'attack player 2 and reduce their HP by 10' do
     sign_up_and_play
     fight
-    expect(page).to have_content "Foo"
+    expect(page).to have_content "Life"
   end
 
   ## This is flawed! STOP IT AND STUB THE RANDOMNESS!!!!

@@ -16,8 +16,8 @@ class Game
     @attacked_player = player2
   end
 
-  def attack
-    @attacked_player.hp -= rand(3)+1
+  def attack(n = rand(3)+1)
+    @attacked_player.hp -= n
   end
 
   def switch_turns
