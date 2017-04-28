@@ -4,10 +4,11 @@ require './lib/player.rb'
 describe Game do
   describe '#attack' do
     it 'reduces player health' do
-      player = Player.new('Foo', 20)
-      game = Game.new(player, player)
-      game.attack(player)
-      expect(player.hp).to eq 10
+      player1 = 'player1'
+      player2 = Player.new('Bar', 20)
+      game = Game.new(player1, player2)
+      game.attack
+      expect(player2.hp).to eq 18
     end
   end
 end
